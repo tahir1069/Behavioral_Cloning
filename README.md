@@ -29,8 +29,11 @@ The specific task here in this project is to predict steering angles to driving 
 *** 
 
 The [simulator](https://github.com/udacity/self-driving-car-sim) works in two ways:
+
 •	Training Mode 
+
 •	Testing Mode
+
 In trainign mode one can drive the car around and record the data for traiing purpose. Whereas Autonomous Mode is testing mode in which one can run the trained model and see the car moving around.
 
 ---
