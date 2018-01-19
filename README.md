@@ -426,12 +426,3 @@ The model works fine need to test it some other self driving simulators and data
 
 *Note: Currently it can work with throttle and steering angle. The model can reverse too depending on the situation. 
 
----
-***
-## References
----
-*** 
-
-•	NVIDIA model: https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/
-
-•	Udacity Self-Driving Car Simulator: https://github.com/udacity/self-driving-car-sim
