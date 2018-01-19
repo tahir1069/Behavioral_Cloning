@@ -15,8 +15,11 @@ Everyone in the world in alot of aspexts. Coming to driving a car here too many 
 The specific task here in this project is to predict steering angles to driving the car but we can also use throotle and break to perfectly clone someone in terms of driving.
 
 **Input** 
+
 •	Images and Steering Angles
+
 **Output** 
+
 •	Steering Angles
 
 ---
@@ -26,8 +29,8 @@ The specific task here in this project is to predict steering angles to driving 
 *** 
 
 The [simulator](https://github.com/udacity/self-driving-car-sim) works in two ways:
-Training Mode 
-Testing Mode
+•	Training Mode 
+•	Testing Mode
 In trainign mode one can drive the car around and record the data for traiing purpose. Whereas Autonomous Mode is testing mode in which one can run the trained model and see the car moving around.
 
 ---
@@ -39,26 +42,37 @@ In trainign mode one can drive the car around and record the data for traiing pu
 Following were the steps to to complete the project.
 
 •	Collecting the data from Simulator 
+
 •	Data Augmentation 
+
 •	Data Preprocessing 
+
 •	Designing a model 
 
 I have used three different models to train the model and see the results.
+
 •	[nVidia end to end learning model](https://arxiv.org/pdf/1604.07316.pdf) 
+
 •	[Comma AI](https://arxiv.org/abs/1608.01230) 
+
 •	[Mobile Net](https://arxiv.org/abs/1704.04861) 
+
 I trained all of three models. I was able to use nVidia and Comma.AI but not Mobile Net because after training this model whole night I was not able to test the model due to limited resources (My PC exhausted!). I am uploading model [here](http://bit.ly/2mWympR)(Hoping someone might test it and inform me :) ).
 Personally in my opinion Comma.AI model gave promising results. It was more accurate and got trained in very short time. Here the videos for [track1](http://bit.ly/2mWympR) and [track2](http://bit.ly/2Dm5vBO).
 
 As can be seen in above videos the model correctly predicts the steeriing angle but the car drives with only constatnt speed also it can not reverse if stuck somewhere. So here comes **the fun part!** 
 What I did:
+
 1.	Trained a model for steering angels with Comma.AI
+
 2.	Trained another model for Throttle Values again this with Comma.AI 
 
 Now I tested these models with new_drive.py. The video can be found [here](http://bit.ly/2FUkwMT).
 
 Cool the video is a bit shaky but still seems OK. Here we can do two improvements.
+
 •	Increasing Dropout or using some other regularization technique.
+
 •	Recording some more fine data
 
 *The main reason for the shaky video is not caring about throttle during data collection phase. It was hard for me to balance between throttle and angle and I was more of concerned about steering angles during data collection.
@@ -100,7 +114,9 @@ dense_38 (Dense)             (None, 1)                 11
 =================================================================
 
 Total params: 981,819
+
 Trainable params: 981,819
+
 Non-trainable params: 0
 
 =================================================================
@@ -159,7 +175,9 @@ dense_42 (Dense)             (None, 1)                 11
 =================================================================
 
 Total params: 329,479
+
 Trainable params: 329,479
+
 Non-trainable params: 0
 
 =================================================================
@@ -352,7 +370,9 @@ dense_43 (Dense)             (None, 1)                 2049
 =================================================================
 
 Total params: 32,505,121
+
 Trainable params: 32,483,233
+
 Non-trainable params: 21,888
 
 =================================================================
@@ -364,12 +384,19 @@ Non-trainable params: 21,888
 *** 
 
 This project requires Python 3.5 and the following Python libraries installed:
+
 •	Keras
+
 •	NumPy
+
 •	SciPy
+
 •	TensorFlow
+
 •	Pandas
+
 •	OpenCV
+
 •	Matplotlib
 
 ---
@@ -379,9 +406,11 @@ This project requires Python 3.5 and the following Python libraries installed:
 *** 
 This repository comes with trained model which you can directly test using the following command.
 Just for steering angle.
+
 •	python drive.py model.h5 folder_name*
 
 To run both steering angel and trottle for the model
+
 •	python new_drive.py steering_angel_model_.h5 throttle_model.h5 folder_name*
 
 *Folder to save the output images to create a movie.
@@ -399,5 +428,7 @@ The model works fine need to test it some other self driving simulators and data
 ## References
 ---
 *** 
+
 •	NVIDIA model: https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/
+
 •	Udacity Self-Driving Car Simulator: https://github.com/udacity/self-driving-car-sim
