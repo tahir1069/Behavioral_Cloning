@@ -14,12 +14,15 @@ Everyone in the world in alot of aspexts. Coming to driving a car here too many 
 *** 
 The specific task here in this project is to predict steering angles to driving the car but we can also use throotle and break to perfectly clone someone in terms of driving.
 
+
+<figure>
+ <img src="examples/images.png" width="100"/>
+<figure>
+ <img src="examples/examples/Flipped Images.png" width="1000"/>
+
 **Input** 
-
 •	Images and Steering Angles
-
 **Output** 
-
 •	Steering Angles
 
 ---
@@ -27,14 +30,35 @@ The specific task here in this project is to predict steering angles to driving 
 ## Data Collection 
 ---
 *** 
+The [simulator](https://github.com/udacity/self-driving-car-sim)contains two tracks and in echa track it can work in two ways 
+1.	Training Mode
 
-The [simulator](https://github.com/udacity/self-driving-car-sim) works in two ways:
+In training mode we can collect data from the simulator. Data is recorded in the following format.
 
-•	Training Mode 
+•	Center Camera Images
+•	Right Camera Images
+•	Left Camera Images
+•	Steering Angles
+•	Throttle
+•	Break
 
-•	Testing Mode
+Here are some control commands for the simulator:
 
-In trainign mode one can drive the car around and record the data for traiing purpose. Whereas Autonomous Mode is testing mode in which one can run the trained model and see the car moving around.
+1.	Steering is controlled via position mouse instead of keyboard. This creates better angles for training. Note the angle is based on the mouse 		distance. To steer hold the left mouse button and move left or right. To reset the angle to 0 simply lift your finger off the left mouse 		button.
+2.	You can toggle record by pressing R, previously you had to click the record button (you can still do that).
+3.	When recording is finished, saves all the captured images to disk at the same time instead of trying to save them while the car is still 	 driving periodically. You can see a save status and play back of the captured data.
+4.	You can takeover in autonomous mode. While W or S are held down you can control the car the same way you would in training mode. This can be 		helpful for debugging. As soon as W or S are let go autonomous takes over again.
+5.	Pressing the spacebar in training mode toggles on and off cruise control (effectively presses W for you).
+6.	Added a Control screen
+7.	Track 2 was replaced from a mountain theme to Jungle with free assets , Note the track is challenging
+8.	You can use brake input in drive.py by issuing negative throttle values
+
+
+2.	Autonomous Mode
+
+In autonomous mode the car waits the steering anles to be predicted. By running drive.py the steering angles are predicted which are fed to the simulator by using web sockets and than the car drives.
+
+Here in this project camera images are given as input and steeing angles are predicted. But later on I have used images to predict throttle hence the end result will be predicting steering angles and throttle.
 
 ---
 ***
@@ -61,7 +85,7 @@ I have used three different models to train the model and see the results.
 •	[Mobile Net](https://arxiv.org/abs/1704.04861) 
 
 I trained all of three models. I was able to use nVidia and Comma.AI but not Mobile Net because after training this model whole night I was not able to test the model due to limited resources (My PC exhausted!). I am uploading model [here](http://bit.ly/2mWympR)(Hoping someone might test it and inform me :) ).
-Personally in my opinion Comma.AI model gave promising results. It was more accurate and got trained in very short time. Here the videos for [track1](http://bit.ly/2mWympR) and [track2](http://bit.ly/2Dm5vBO).
+Personally in my opinion Comma.AI model gave promising results. It was more accurate and got trained in very short time. Here the videos for [track1](http://bit.ly/2EWnVcE) and [track2](http://bit.ly/2Dm5vBO).
 
 As can be seen in above videos the model correctly predicts the steeriing angle but the car drives with only constatnt speed also it can not reverse if stuck somewhere. So here comes **the fun part!** 
 What I did:
