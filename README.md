@@ -16,9 +16,9 @@ The specific task here in this project is to predict steering angles to driving 
 
 
 <figure>
- <img src="examples/images.png" width="100"/>
+ <img src="example/Original Images.png" width="1000"/>
 <figure>
- <img src="examples/examples/Flipped Images.png" width="1000"/>
+ <img src="example/Flipped Images.png" width="1000"/>
 
 **Input** 
 •	Images and Steering Angles
