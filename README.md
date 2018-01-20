@@ -14,16 +14,25 @@ Everyone in the world in alot of aspexts. Coming to driving a car here too many 
 *** 
 The specific task here in this project is to predict steering angles to driving the car but we can also use throotle and break to perfectly clone someone in terms of driving.
 
+Here are three images from respective cars can be seen. 
+
+**Input** 
+
+•	Images and Steering Angles
+
+**Output** 
+
+•	Steering Angles
 
 <figure>
  <img src="example/Original Images.png" width="1000"/>
+
+In data augmentation I have flipped the images. It can be seen from the horizontal flips that this make sense because it will genrealize the model by changing the right turn to the left. It also entirely changes the environment view. 
+Here the one thing is to be noted by flipping images horizontally the steering angles also needs to be changed i.e from +45° to -45°.
+vertical flip is just for the visualization purpose here only and is not used in original code.
+
 <figure>
  <img src="example/Flipped Images.png" width="1000"/>
-
-**Input** 
-•	Images and Steering Angles
-**Output** 
-•	Steering Angles
 
 ---
 ***
