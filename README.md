@@ -45,10 +45,15 @@ The [simulator](https://github.com/udacity/self-driving-car-sim)contains two tra
 In training mode we can collect data from the simulator. Data is recorded in the following format.
 
 •	Center Camera Images
+
 •	Right Camera Images
+
 •	Left Camera Images
+
 •	Steering Angles
+
 •	Throttle
+
 •	Break
 
 Here are some control commands for the simulator:
